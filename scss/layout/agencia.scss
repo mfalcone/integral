@@ -1,0 +1,67 @@
+.buscador-agencias{
+	#map{
+		width: 100%;
+		height:500px;
+	}
+
+	h1{
+		font-weight: bold;
+		font-size: 32px;
+	}
+
+	input[type="text"]{
+		width: 80%;
+		padding:10px;
+		margin-bottom: 10px;
+	}
+
+	.ubicacion-actual{
+		background: #f59f2f; /* Old browsers */
+		background: -moz-linear-gradient(top, #f59f2f 0%, #fed75d 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #f59f2f 0%,#fed75d 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #f59f2f 0%,#fed75d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f59f2f', endColorstr='#fed75d',GradientType=0 ); /* IE6-9 */
+		float: left;
+    	padding: 10px;
+    	border-radius: 20px;
+    	color:#000;
+    	text-transform:uppercase;
+    	font-size:12px;
+    	&:hover{
+    		text-decoration: none;
+    		background: linear-gradient(to bottom, #fed75d 0%,#f59f2f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			
+		}
+	}
+
+	.fa{
+		font-size:20px;
+	}
+
+	.buscar{
+		font-weight:bold;
+		text-transform: uppercase;
+		background:#373736;
+		color: #FFF;
+		float:left;
+	    clear: left;
+	    padding: 10px;
+	    margin-top: 20px;
+	}
+}
+
+.resultados-agencia{
+	background:#3b3b3a;
+}
+
+
+.resultados-agencia{
+	padding:0;
+
+	.lineas-diagonales-page{
+		background:repeating-linear-gradient(-45deg, #000 10px, #000 15px, $allo 15px, $allo 20px);
+		float:initial;
+		width:40px;
+	}
+
+}

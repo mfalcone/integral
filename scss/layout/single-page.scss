@@ -1,0 +1,111 @@
+.wrapper{
+	position:relative;
+}
+
+.breadcrumb{
+	background:#3b3b3a;
+	color:#CCC;
+	height:63px;
+	width:100%;
+    line-height: 60px;
+    padding-left: 10px;
+
+    a{
+    	color: #FFF;
+    }
+}
+
+.page-header{
+	border-bottom:none;
+	margin:0;
+	padding-bottom:0;
+	h1{
+		padding-left:5%;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size:42px;
+	}
+}
+
+.lineas-diagonales-page{
+	background:repeating-linear-gradient(-45deg, #fff 10px, #fff 15px, #ececec 15px, #ececec 20px);
+	float:initial;
+	width:40px;
+}
+
+.contenido-page{
+	padding-top:40px;
+	padding-bottom:100px;
+}
+
+.page-preguntas-frecuentes{
+	dt{
+		padding-left: 32px;
+  		position: relative;
+  		padding-bottom:10px;
+  		cursor:pointer;
+		&:before {
+		  position: absolute;
+		  font-family: 'FontAwesome';
+		  top: 0;
+		  left: 10px;
+		  content: "\f054";
+		  color:$allo;
+		}
+	}
+
+	dd{
+		padding-left:32px;
+		padding-top:10px;
+		padding-bottom:20px;
+		display:none;
+	}
+}
+
+
+#seguimiento-envio{
+	fieldset{
+		margin-bottom:5px;
+		label{
+			width:45%;
+			font-size:21px;
+    		text-align:right;
+		}
+		img{
+			float:right;
+			margin-right: 169px;
+			padding: 10px;
+		}
+		input{
+			width:30%;
+			padding:10px;
+		}
+	}
+}
+
+.page-seguimiento-de-envios .btn-lg{
+	float:right;
+	margin-right:175px;
+}
+
+#resultados{
+	float:left;
+	width:100%;
+	.btn-lg{
+		margin-right: 0;
+	}
+}
+
+.page-nuestra-flota{
+	li:before{
+		display: none;
+	}
+}
+
+.parrafo-destacado{
+	background:#ffc64a;display:block;padding: 5px;
+}
+
+.texto-destacado{
+	color:$allo;
+}

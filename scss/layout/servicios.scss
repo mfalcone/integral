@@ -1,0 +1,77 @@
+#botonera-servicios{
+	padding-top:35px;
+	a{
+		display: block;
+		width: 100%;
+		text-align: center;
+		img{
+			max-width: 100%;
+			display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+	}
+
+	h2{
+		margin:0;
+		padding: 0;
+		font-size: 39px;
+		font-weight: bold;
+		color: #000;
+
+	}
+
+	h3{
+		margin:0;
+		padding: 0;
+		font-size: 32px;
+		color:#706f6f;
+	}
+	
+	.col-md-4:nth-child(2){
+		border-left:2px solid #e5e5e5;
+		border-right:2px solid #e5e5e5;
+	}
+
+	.col-md-4{
+		padding-bottom: 20px;
+	}
+}
+
+.main-servicios-wrapper{
+	background:#3b3b3a;
+	overflow:auto;
+	li{
+		border-bottom:1px solid #CCC;
+		list-style: none;
+
+		&:before{
+			display:none;
+		}
+	}
+	h3{
+		a{
+			text-transform: uppercase;
+			color: #FFF;
+			font-size:20px;
+		}
+	}
+
+	p{
+		a{
+			color: $allo;
+		}
+	}
+}
+
+.pestania-baja{
+	background: url(images/back-pestania.jpg);
+	width: 134px;
+	height: 28px;
+	text-align: center;
+	font-size: 10px;
+	color: #000;
+	line-height: 26px;
+	margin-left: auto;
+	margin-right: auto;
+}

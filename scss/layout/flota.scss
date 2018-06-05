@@ -1,0 +1,51 @@
+#carousel-flota{
+	position:relative;
+	overflow:auto;
+	.carousel-indicators{
+		margin:0;
+		left: 30px;
+		top: auto;
+		bottom:40px;
+	}
+}
+
+.second_title{
+	background:rgba(253,203,75,0.5);
+	padding:5px;
+	position: relative;
+	top:-37px;
+	padding-left:30px;
+	font-size: 20px;
+}
+.page-template-page-flota .single-page-content, .page-template-page-flecha-bus .single-page-content{
+	margin-top:-37px;
+
+		ul{
+			li{
+				float:left;
+				img{
+					float:left;
+				}
+
+				.texto{
+					float:left;
+					width:60%;
+					border-left:2px dotted $allo;
+					padding-left: 10px;
+					padding-bottom: 20px;
+					margin-top:20px;
+				}
+			}
+		}
+	
+}
+
+.page-template-page-flota li{
+	margin-bottom: 40px;
+	padding-left:0;
+
+	img{
+		margin-right: 4%;
+   		margin-left: 2%;
+	}
+}
