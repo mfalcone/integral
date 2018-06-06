@@ -6815,6 +6815,8 @@ h1.logo a {
     height: auto; } }
 footer.main-footer {
   background: #F5F5F5; }
+footer.main-footer a {
+  color: #333; }
 footer.main-footer h2 {
   background: #FFF;
   margin: 0;

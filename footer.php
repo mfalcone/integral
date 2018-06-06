@@ -9,7 +9,7 @@
 <footer class="main-footer container">
 		<div class="row">
 			<div class="col-md-12">
-				<span class="atencion">ATENCIÓN AL CLIENTE:</span> 0810 810 PACK (7225) / clientes@integralexpress.com
+				<span class="atencion">ATENCIÓN AL CLIENTE:</span> 0810 810 PACK (7225) / <a href="mailto:clientes@integralexpress.com">clientes@integralexpress.com</a>
 				<ul class="social">
 					<li style="padding:5px 8px"><a href="https://www.instagram.com/integral_pack/" target="_blank"><i class="fa fa-instagram" style="font-size:17px;"></i></a></li>
 					<li><a href="https://www.facebook.com/Integral-Express-Flecha-Bus-1776116895957254/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>

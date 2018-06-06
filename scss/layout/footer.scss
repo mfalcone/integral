@@ -58,6 +58,11 @@
 
 footer.main-footer{
 	background:#F5F5F5;
+
+	a{
+			color:#333;
+		}
+
 	h2{
 		background:#FFF;
 		margin:0;
@@ -70,6 +75,7 @@ footer.main-footer{
 		text-align: center;
 		padding:10px;
 
+		
 		.social{
 			position: absolute;
 			right: 20px;
