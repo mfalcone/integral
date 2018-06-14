@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 	$(window).on('scroll', function () {
 	        var scroll = $(document).scrollTop();
 	        $(".home .carousel-inner").css({
-	            'background-position':'0% '+(-.8*scroll)+'px'
+	            'background-position':'0% '+(-.4*scroll)+'px'
 	        });
 	        //console.log(scroll);
 	        //console.log(parseInt($("body").height()-$(".back-footer").offset().top));
@@ -64,5 +64,9 @@ jQuery(document).ready(function($){
 
 	$(".page-preguntas-frecuentes dt").click(function(){
 		$(this).next().slideToggle();
+	})
+
+	$(".mobile-menu a").click(function(){
+		$(".navbar").slideToggle();
 	})
 })

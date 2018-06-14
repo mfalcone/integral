@@ -98,9 +98,27 @@ footer.main-footer{
 		}
 	}
 
+
+
 	.copyright{
 		background:$allo;
 		text-align:center;
 		padding:15px;
 	}
+}
+
+
+@media only screen and (max-width: 768px) {
+.logo-footer .chat{
+	top:-45%;
+}
+footer.main-footer .col-md-12 .social{
+	padding: 5% 0 10% 40%;
+	right: 0;
+	position: relative;
+}
+
+footer.main-footer .copyright{
+	padding: 5px;
+}
 }

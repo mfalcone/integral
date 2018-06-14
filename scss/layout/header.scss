@@ -1,8 +1,9 @@
 h1.logo{
 	background:url(images/logo.svg) no-repeat;
-	width:250px;
 	height:46px;
 	text-indent:-10000px;
+	background-size: contain;
+    width: 100%;
 	
 	a{
 		display: block;
@@ -10,7 +11,9 @@ h1.logo{
 }
 
 .main-header{
-	
+	.mobile-menu a{
+		display: none;
+	}
 	ul.nav{
 		li{
 			float:left;
@@ -79,4 +82,35 @@ h1.logo{
 	    	text-decoration:none;
 	    }
 	}	
+}
+
+
+@media only screen and (max-width: 768px) {
+ 	.main-header{
+
+ 		h1.logo{
+ 			
+ 		}
+
+ 		.mobile-menu{
+			    padding: 5px;
+ 				a{
+ 					display: block;
+ 					font-size: 24px;
+				    text-align: center;
+				    border: 1px solid;
+				    margin-top: 10px;
+				    color: #666;
+ 				}
+
+ 		}
+ 		.navbar{
+ 			display: none;
+ 		}
+ 		.nav{
+ 			li{
+ 				width: 100%;
+ 			}
+ 		}
+ 	}
 }
