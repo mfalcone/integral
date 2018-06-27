@@ -19,7 +19,7 @@
 			<div class="col-container">
 				<div class="lineas-diagonales-page col-md-1 col"></div>	
 				<div class="col col-md-8 contenido-page"> 
-					<form action="http://web.integralexpress.com/scripts/tracking.php" method="post" id="seguimiento-envio" action="http://web.integralexpress.com/scripts/tracking.php">
+					<form method="post" id="seguimiento-envio" action="http://web.integralexpress.com/scripts/tracking.php">
 					<fieldset>
 						<label for="puntodeventa">Código punto de venta
 :</label>

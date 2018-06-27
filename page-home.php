@@ -1,30 +1,31 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); // This fxn gets the header.php file and renders it ?>
 
-<div class="simple-carousel hidden-sm hidden-xs" data-example-id="simple-carousel">
+<div class="simple-carousel" data-example-id="simple-carousel">
 	<div class="carousel slide carousel-fade container" id="carousel-example-generic" data-ride="carousel">
 		<ol class="carousel-indicators"> 
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> 
 			<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li> 
 			<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li> 
 		</ol> 
-		<div class="carousel-inner col-md-12 contenedor_carrusel" role="listbox" style="background:url(<?php echo get_stylesheet_directory_uri();?>/images/argentina.jpg)"> 
+		<div class="carousel-inner col-md-12 contenedor_carrusel" role="listbox"> 
 			<div class="item active"> 
-					<h3 class="caption">Bienvenidos a<br><strong>Integral Pack.</strong></h3>
+					<h3 class="caption">Bienvenidos a<strong> Integral Pack.</strong></h3>
 					<h4>Soluciones lógisticas a la medida de sus necesidades</h4>
 			</div> 
 			<div class="item "> 
-				<h3 class="caption">¿Compra o vende <br><strong>en Internet?</strong></h3>
-				<h4 style="font-size:17px;">Diseñamos un servicio para que llegue<br> en tiempo y forma a sus clientes</h4>
+				<h3 class="caption">¿Compra o vende<strong> en Internet?</strong></h3>
+				<h4 class="h4smaller">Diseñamos un servicio para que llegue en tiempo y forma a sus clientes</h4>
 			</div> 
 			<div class="item "> 
-				<h3 class="caption">Cobertura<br>Nacional</h3>
+				<h3 class="caption">Cobertura Nacional</h3>
 				<h4>Envíos a todo el país</h4>
 			</div> 
 		</div> 
+		<a href="#carousel-example-generic" class="left carousel-control visible-xs visible-sm" role="button" data-slide="prev"> <span class="fa fa-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> 
 		<a href="#carousel-example-generic" class="right carousel-control" role="button" data-slide="next"> <span class="fa fa-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> 
 	</div> 
-	<div class="botones hidden-sm hidden-xs">
+	<div class="botones">
 		<ul>
 			<li><a href="#" data-toggle="modal" data-target="#envioModal"><img src="http://maxifalcone.org/integral/wp-content/themes/integral_express/images/envio_icon.png" alt="">Seguir envío</a></li>
 			<li><a href="#" data-toggle="modal" data-target="#sucursalModal"><img src="http://maxifalcone.org/integral/wp-content/themes/integral_express/images/buscar_icon.png" alt="">Buscar agencias</a></li>

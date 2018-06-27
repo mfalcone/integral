@@ -203,17 +203,44 @@
 }
 
 @media only screen and (max-width : 992px){
-	.carousel-inner > .item > img, .carousel-inner > .item > a > img{
-		display: none;
-	}
+	
 	.infra-carousel p{
 		width: 96%;
-		font-size: 20px;
-		margin-top: 36px;
+		font-size: 15px;
+		margin-top: 10px;
+		padding:0px 15px 0 7px;
+		text-transform: uppercase;
 	}
 
 	.infra-carousel .square{
-		height: 100px;
-
+		height: 300px;
+		left:1.7%;
 	}
+
+	.infra-carousel .item{
+		margin-left:0;
+		height:320px;
+	}
+
+	#carousel-infraestructura{
+		margin-left:10px;
+		margin-right:10px;
+		height: 360px;
+	}
+
+	.infra-carousel img{
+		width:100%;
+	}
+
+	#carousel-infraestructura ol.carousel-indicators{
+		bottom: 0px;
+    	left: 50%;
+    	margin-left: -48px;
+    	top: auto;
+	}
+
+	.infra-carousel h1{
+		font-size:28px;
+	}
+
 }

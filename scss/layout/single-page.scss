@@ -128,7 +128,21 @@ img{
 		font-size: 22px;
 	}
 
-	.infra-carousel h1{
-		font-size: 20px;
+	#seguimiento-envio fieldset input{
+		border: 1px solid #CCC;
+		width:100%;
+	}
+
+	#seguimiento-envio fieldset label{
+		width: 100%;
+		text-align: left;
+	}
+
+	#seguimiento-envio select{
+		width:100%;
+	}
+
+	.contenido-page{
+		padding-bottom: 30px;
 	}
 }

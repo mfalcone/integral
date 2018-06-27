@@ -90,6 +90,10 @@ footer.main-footer{
 				i{
 					color: #FFF;
 				}
+
+				.fa-instagram{
+					font-size:17px;
+				}
 			}
 		}
 
@@ -109,16 +113,53 @@ footer.main-footer{
 
 
 @media only screen and (max-width: 768px) {
-.logo-footer .chat{
-	top:-45%;
-}
-footer.main-footer .col-md-12 .social{
-	padding: 5% 0 10% 40%;
-	right: 0;
-	position: relative;
-}
+	
+	footer.main-footer {
+		.copyright{
+			padding: 5px;
+		}
 
-footer.main-footer .copyright{
-	padding: 5px;
-}
+		.row{
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.col-md-12{
+			font-size:9px;
+
+			.social{
+				font-size:14px;
+				position: absolute;
+			    top: -85px;
+			    right: 0px;
+			    font-size: 10px;
+			    padding: 5% 0 10% 40%;
+			    li{
+				    .fa-instagram{
+				    	font-size:14px;
+				    }
+			    }
+			}
+		}
+
+		
+	}
+
+	.back-footer{
+		display: none;
+	}
+
+	.logo-footer{
+		img{
+			width: 60%;
+			margin-top:35px;
+		}
+
+		.chat{
+			top:-18%;
+			img{
+				width: 100%;
+			}
+		}
+	}
 }

@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<span class="atencion">ATENCIÓN AL CLIENTE:</span> 0810 810 PACK (7225) / <a href="mailto:clientes@integralexpress.com">clientes@integralexpress.com</a>
 				<ul class="social">
-					<li style="padding:5px 8px"><a href="https://www.instagram.com/integral_pack/" target="_blank"><i class="fa fa-instagram" style="font-size:17px;"></i></a></li>
+					<li style="padding:5px 8px"><a href="https://www.instagram.com/integral_pack/" target="_blank"><i class="fa fa-instagram"></i></a></li>
 					<li><a href="https://www.fb.me/IntegralPack" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
 					
 				</ul>

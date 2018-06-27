@@ -50,17 +50,6 @@ jQuery(document).ready(function($){
 	})
 
 
-	$("#buscador-provincia").autoComplete({
-    minChars: 2,
-    source: function(term, suggest){
-        term = term.toLowerCase();
-        choices=["Capital Federal","Buenos Aires","Catamarca","Chaco","Chubut","Cordoba","Corrientes","Entre Rios","Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquen","Rio Negro","Salta","San Juan","San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Tucuman"];
-        var matches = [];
-        for (i=0; i<choices.length; i++)
-            if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
-        suggest(matches);
-    }
-	});
 
 	$(".page-preguntas-frecuentes dt").click(function(){
 		$(this).next().slideToggle();
