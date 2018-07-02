@@ -78,11 +78,11 @@ endif;
 					<h4 class="modal-title">Sucursal más cercana</h4>
 				</div>
 				<div class="modal-body">
-						<input type="text" placeholder="Provincia">
-						<input type="text" placeholder="Ciudad">
+						<input type="text" id="buscador-provincia" placeholder="Provincia" disabled>
+						<input type="text" id="buscador-ciudad" placeholder="Ciudad" disabled>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default">Buscar</button>
+					<button type="button" class="btn btn-default" id="buscar-agencia-bt">Buscar</button>
 				</div>
 			</div>
 
@@ -148,7 +148,98 @@ endif;
 	</div>
 
 </div>
+<script type="text/javascript">
+	$ = jQuery;
+ 	var laprov;
+	var laciudad;
+	var url = "<?php echo site_url(); ?>/buscador-de-agencias/"
 
+	jQuery(window).load(function(){
+
+	 		$.ajax({
+	  			url: '<?php echo get_stylesheet_directory_uri();?>/json-res.php?provincias',
+	  			 beforeSend: function(){
+				     $("#buscador-provincia").addClass("loading");
+				   },
+				   complete: function(){
+				    $("#buscador-provincia").removeClass("loading");
+				   },
+					}).done(function( data ) {
+						$( "#buscador-provincia" ).prop( "disabled", false );
+						provincias = jQuery.parseJSON(data);
+						iniciarBusquedaProvincia();
+					})
+
+			function iniciarBusquedaProvincia(){
+				$("#buscador-provincia").autocomplete({
+				    hideInvalidSuggestions: true,
+				    minChars:0,
+				    lookup:provincias.suggestions,
+				    onSelect: function (suggestion) {
+				    	
+				    	laprov = suggestion.data;
+				        
+				        $.ajax({
+		  			url: '<?php echo get_stylesheet_directory_uri();?>/json-res.php?localidad&num='+laprov,
+		  			beforeSend: function(){
+					     $("#buscador-ciudad").addClass("loading");
+					   },
+					   complete: function(){
+					    $("#buscador-ciudad").removeClass("loading");
+					   },
+						}).done(function( data ) {
+							$( "#buscador-ciudad" ).prop( "disabled", false );
+							ciudades = jQuery.parseJSON(data);
+							iniciarBusquedaCiudad();
+						})
+				    
+
+				    },
+				    onSearchStart: function (query) {
+				    	$("#buscador-provincia").addClass("loading");
+				    	$("#buscador-ciudad").val("");
+				    } ,
+				    onSearchComplete: function (query, suggestions) {
+
+				    	$("#buscador-provincia").removeClass("loading");
+				    }
+				});
+			}
+			function iniciarBusquedaCiudad(){
+			$("#buscador-ciudad").autocomplete({
+				lookup:ciudades.suggestions,
+				 //serviceUrl: '<?php echo get_stylesheet_directory_uri();?>/json-res.php?localidad&num='+localidad,
+				 matchContains: false,
+				 minChars:0,
+				hideInvalidSuggestions: true,
+				 onSelect: function (suggestion) {
+			    	laciudad = 	suggestion.data;
+			    	var ciudad = $("#buscador-ciudad").val();
+			    	var provincia = $("#buscador-provincia").val();
+			    	url = url+"?ciudad="+ciudad+"&provincia="+provincia+"&ciudadid="+laciudad;
+			    	$("#buscar-agencia-bt").click(function(){
+			    		window.location.href = url;
+			    	})
+
+			    },
+			    onSearchStart: function (query) {
+			    	console.log("search start");
+			    	$("#buscador-ciudad").addClass("loading");
+			    	
+			    } ,
+			    onSearchComplete: function (query, suggestions) {
+			    	console.log("search complete");
+			    	$("#buscador-ciudad").removeClass("loading");
+			    }
+
+
+
+			})
+		}
+
+	 })
+
+</script>
 
 <div class="container back-footer"></div>
 
