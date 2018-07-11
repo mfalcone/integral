@@ -98,6 +98,29 @@
 
 }
 
+.autocomplete-suggestion:hover{
+	background-color: #CCC;
+}
+
+.msj{
+	background:#3b3b3a;
+	color:#FFF;
+	float:left;
+	margin-top:40px;
+	width:80%;
+	padding:10px;
+	margin-bottom:35px;
+	p{
+		margin:0;
+	}
+}
+
+#ubicacion-actual img{
+	width:16px;
+	height:auto;
+	margin-top:-3px;
+}
+
 @media only screen and (max-width : 992px){
 	
 	.buscador-agencias{
@@ -117,5 +140,9 @@
 		    display: inline-block;
 		    margin-bottom: 20px;
 		}
+	}
+
+	#map{
+		margin-top:50px;
 	}
 }

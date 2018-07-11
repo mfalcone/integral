@@ -27,11 +27,11 @@ jQuery(document).ready(function($){
 	        });
 	        //console.log(scroll);
 	        //console.log(parseInt($("body").height()-$(".back-footer").offset().top));
-	        var ent = parseInt($("body").height()-scroll);
+	        /*var ent = parseInt($("body").height()-scroll);
 	         $(".back-footer").css({
 
 	            'background-position':'0% '+(-.2*ent)+'px'
-	        });
+	        });*/
 		})
 
 	$(".botones a").on("click",function(){
@@ -58,4 +58,30 @@ jQuery(document).ready(function($){
 	$(".mobile-menu a").click(function(){
 		$(".navbar").slideToggle();
 	})
+
+	var velocidad = 100;
+	
+	$(".flip-container .front .bt").on("hover touchstart",
+	    function(e) {
+	        $(this).parent().animate({
+	        	top:'-254px'
+	        },velocidad)
+	        $(".flip-container .back").animate({
+	        	top:'0'
+	        },velocidad)
+	    }
+	);
+
+	$(".flip-container .back .bt").on("mouseout touchend",
+	    function() {
+	    	$(this).parent().animate({
+	        	top:'254px'
+	        },velocidad)
+	        $(".flip-container .front").animate({
+	        	top:'0'
+	        },velocidad)
+	    }
+	);
+
+
 })

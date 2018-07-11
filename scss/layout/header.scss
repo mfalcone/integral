@@ -4,8 +4,9 @@ h1.logo{
 	text-indent:-10000px;
 	background-size: contain;
     width: 100%;
+    max-width: 225px;
+	margin-top: 23px;
 
-    
 	a{
 		display: block;
 	}
@@ -90,7 +91,8 @@ h1.logo{
  	.main-header{
 
  		h1.logo{
- 			
+ 			width: 206px;
+ 			height: auto;
  		}
 
  		.mobile-menu{

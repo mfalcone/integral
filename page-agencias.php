@@ -11,28 +11,24 @@
 			<h1>Buscador de Agencias</h1>
 			<input type="text" id="buscador-provincia" placeholder="Provincia" disabled>
 			<input type="text" id="buscador-ciudad" placeholder="Ciudad" disabled>
-			<a href="#" id="ubicacion-actual" class="ubicacion-actual">Usar mi ubicación actual <i class="fa fa-map-marker"></i></a>
+			<a href="#" id="ubicacion-actual" class="ubicacion-actual">Usar mi ubicación actual <img src="<?php echo get_stylesheet_directory_uri();?>/images/mira-buscador-agencias.png" alt=""></a>
 			<!--a href="#" id="boton-buscar" class="buscar">Buscar</a>-->
 			<div class="mostrar-resultados" id="mostrar-resultados">
 				<div class="cargando-text">Cargando...</div>
-				<table>
-					<tr>
-						<td class="tit">Código de Agencia</td>
-						<td class="res" id="cod-agen"></td>
-					</tr>
-					<tr>
-						<td class="tit">Dirección</td>
-						<td class="res" id="direccion-agen"></td>
-					</tr>
-					<tr>
-						<td class="tit">Teléfono</td>
-						<td class="res" id="telefono-agen"></td>
-					</tr>
-					<tr>
-						<td class="tit">Horario</td>
-						<td class="res" id="horario-agen"></td>
-					</tr>
-				</table>
+				<div class="msj">
+					<p>
+						Código de Agencia: <span id="cod-agen"></span>
+					</p>
+					<p>
+						Dirección: <span class="res" id="direccion-agen"></span>
+					</p>
+					<p>
+						Teléfono: <span id="telefono-agen"></span>
+					</p>
+					<p>
+						Horario: <span id="horario-agen"></span>
+					</p>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-8">
@@ -59,6 +55,9 @@
 	 	var provin;
 	 	var myaddress;
 	  jQuery(window).load(function(){
+
+	 
+
 
 	  	var url_string = window.location.href
 	  	var url = new URL(url_string);
@@ -145,6 +144,7 @@
 			    hideInvalidSuggestions: true,
 			    minChars:0,
 			    lookup:provincias.suggestions,
+			    tabDisabled: true,
 			    onSelect: function (suggestion) {
 			    	
 			    	localidad = suggestion.data;
@@ -168,11 +168,16 @@
 			    onSearchStart: function (query) {
 			    	$("#buscador-provincia").addClass("loading");
 			    	$("#buscador-ciudad").val("");
+			    	$( "#buscador-ciudad" ).prop( "disabled", true );
+			    	
 			    } ,
 			    onSearchComplete: function (query, suggestions) {
 
 			    	$("#buscador-provincia").removeClass("loading");
+			    	//$( "#buscador-ciudad" ).prop( "disabled", false );
 			    }
+
+
 			});
 		}
 		function iniciarBusquedaCiudad(){
@@ -190,10 +195,12 @@
 		    	
 		    	$("#buscador-ciudad").addClass("loading");
 		    	
+		    	
 		    } ,
 		    onSearchComplete: function (query, suggestions) {
 		    	
 		    	$("#buscador-ciudad").removeClass("loading");
+		    	
 		    }
 
 

@@ -9,23 +9,30 @@
 			display: block;
 		    margin-left: auto;
 		    margin-right: auto;
+		    width: 46px;
+			height: auto;
+			margin-bottom: 10px;
 		}
 	}
 
 	h2{
 		margin:0;
 		padding: 0;
-		font-size: 39px;
+		font-size: 25px;
 		font-weight: bold;
 		color: #000;
+		text-transform: uppercase;
+		line-height: 24px;
+		margin-bottom: 8px;
 
 	}
 
 	h3{
 		margin:0;
 		padding: 0;
-		font-size: 32px;
+		font-size: 20px;
 		color:#706f6f;
+		text-transform: uppercase;
 	}
 	
 	.col-md-4:nth-child(2){
@@ -42,7 +49,7 @@
 	background:#3b3b3a;
 	overflow:auto;
 	li{
-		border-bottom:1px solid #CCC;
+		border-bottom:1px solid #606060;
 		list-style: none;
 
 		&:before{
@@ -74,4 +81,174 @@
 	line-height: 26px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.servicios-navbar {
+	margin-top:50px;
+	ul.servicios-nav{
+		border-top:1px solid #CCC;
+		li{
+			float:left;
+			padding-left: 0;
+			width:20%;
+			position: relative;
+			padding-right: 10px;
+			padding-top:15px;
+			padding-bottom:10px;
+			padding-left:10px;
+
+			&:nth-child(1){
+
+				@extend %primeros-items;
+			}
+			&:nth-child(2){
+				@extend %primeros-items;
+				div{
+					border-left:1px solid $allo;
+					border-right: 1px solid $allo;
+				}
+			}
+			&:nth-child(3){
+				@extend %primeros-items;
+			}
+
+			a{
+				font-size: 14px;
+				color: #1A1A1A;
+				text-transform: uppercase;
+				float: left;
+				font-weight: bold;
+				line-height: 15px;
+
+				&:hover{
+					text-decoration: none;
+					color: $allo;
+				}
+			}
+
+			&:before{
+				content:"";
+				display: block;
+				width: 30px;
+			    border-bottom: 1px solid $allo;
+			    position: absolute;
+			    bottom: 0;
+			    left: 27px;
+			}
+
+			span{
+				font-size: 12px;
+				float: left;
+				clear: left;
+			}
+		}
+	}
+}
+
+.page-template-page-servicios-total .contenido-page p{
+	padding-left:10px;
+	font-size:17px;
+}
+
+%primeros-items {
+  width: 33%;
+  padding:0;
+  border-bottom:1px solid #CCC;
+  display: block;
+  height: 130px;
+  display: flex;
+  padding-bottom: 15px;
+  line-height: 20px;
+  &:hover{
+  	background: $allo;
+
+  	span{
+  		color: #FFF;
+  	}
+
+}
+
+  	div{
+		display: inline-block;
+		align-self: flex-end;
+		padding-left: 10px;
+	}	
+
+	a{
+		font-size:16px;
+		color: #686868;
+		line-height: 22px;
+		strong{
+			font-size:22px;
+			text-transform: uppercase;
+			color: #000;
+			display: block;
+		}
+
+		&:hover{
+			text-decoration: none;
+
+		}
+	}
+
+	span{
+		color: $allo;
+		font-size:12px;
+		float: left;
+	}
+
+	&:before{
+		content:"";
+		display: none;
+	}
+
+}
+
+.page-todos-los-servicios .content h3{
+	margin-bottom:0;
+}
+
+
+@media only screen and (max-width: 560px) {
+	.servicios-navbar{
+		ul.servicios-nav{
+			border-top:1px solid #CCC;
+			padding-top:10px;
+			li{
+				width: 100%;
+				height: auto;
+				margin-top:10px;
+				a{
+					font-size:16px;
+					float: left;
+				}
+				span{
+					clear: left;
+					font-size: 12px;
+				}
+
+				br{
+					display: none;
+				}
+
+
+			}
+		}
+	}
+
+	%primeros-items {
+		width: 100%;
+		height: auto;
+		margin-top:10px;
+		padding-bottom:10px;
+		div{
+			border-left:none;
+			border-right: none;
+		}	
+
+		span{
+			font-size:14px;
+		}
+
+	}
 }

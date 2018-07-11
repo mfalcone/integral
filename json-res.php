@@ -53,6 +53,7 @@ ini_set('display_errors', 1);
 	if(isset($_GET["agencia"],$_GET["agen_num"])){
 		$agen_num = $_GET["agen_num"];
 		$agencia = IPETrackingWEBBuscarAgencias_v2($agen_num)->IPEAgencias->MAgencia; 
+		
 		if(is_array($agencia)){ 
 			//print_r($agencia);
 			$ultima = end($agencia);

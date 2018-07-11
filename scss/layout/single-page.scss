@@ -103,7 +103,7 @@
 }
 
 .parrafo-destacado{
-	background:#ffc64a;display:block;padding: 5px;
+	background:#ffc64a;display:block;padding: 12px;
 }
 
 .texto-destacado{
@@ -114,6 +114,14 @@ img{
 	height: auto;
 }
 
+.home .content p{
+	text-align:center;
+	padding:0 30px;
+
+	hr{
+		border:4px solid;
+	}
+}
 
 @media only screen and (max-width: 768px) {
 	.breadcrumb{

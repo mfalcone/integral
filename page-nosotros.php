@@ -2,25 +2,43 @@
 <?php get_header(); // This fxn gets the header.php file and renders it ?>
 
 <div id="nosotros-definicion">
-	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-		<div class="flipper col-md-4">
-			<div class="front"><div><h2><strong>Envios</strong><br> en <strong>24hs.</strong></h2></div></div>
-			<div class="back"><div><h2>Somos <strong>la única empresa</strong> que llega a las <strong>principales ciudades del país en 24hs.</strong></h2></div></div>
+			<div class="flip-container">
+				<div class="flipper col-md-4">
+					<div class="front">
+						<div><h2><strong>Envíos</strong><br> en <strong>24hs.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Somos <strong>la única empresa</strong> que llega a las <strong>principales ciudades del país en 24hs.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
+				</div>
+			</div>
+			<div class="flip-container">
+				<div class="flipper col-md-4">
+					<div class="front">
+						<div><h2><strong>Máxima capilaridad</strong> y <strong>cobertura</strong> del <strong> mercado</strong>.</h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Somos la empresa de logística de <strong>mayor capilaridad</strong> y <strong>cobertura</strong> a nivel nacional.</h2></div>
+						<div class="bt"></div>
+					</div>
+				</div>
+			</div>
+			<div class="flip-container">
+				<div class="flipper col-md-4">
+					<div class="front">
+						<div><h2><strong>Más</strong> de <strong>400 agencias</strong>.</h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Tenemos <strong>más de 400 agencias</strong> distribuidas en <strong>cada rincón de la Argentina.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-		<div class="flipper col-md-4">
-			<div class="front"><div><h2><strong>Máxima capilaridad</strong> y <strong>cobertura</strong> del <strong> mercado</strong></h2></div></div>
-			<div class="back"><div><h2>Somos la empresa de logística de <strong>mayor capilaridad</strong> y <strong>cobertura</strong> a nivel nacional</h2></div></div>
-		</div>
-	</div>
-	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-		<div class="flipper col-md-4">
-			<div class="front"><div><h2><strong>Más</strong> de <strong>400 agencias</strong></h2></div></div>
-			<div class="back"><div><h2>Tenemos <strong>más de 400 agencias</strong> distribuidas en <strong>cada rincón de la Argentina.</strong></h2></div></div>
-		</div>
-	</div>
-</div>
 
 	<div id="main" class="container single-page">
 			<section class="content col-md-12">
@@ -37,21 +55,21 @@
 						<div class="carousel-inner col-md-12" role="listbox"> 
 							<div class="item active">
 								<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-3-infraestructura.jpg" alt="">
-								<p><strong>Más de 1.000 micros </strong><br>de larga distancia.</p> 
+								<div class="p-wrapper"><p><strong>Más de 1.000 micros </strong><br>de larga distancia.<br>-</p> </div>
 							</div> 
 							<div class="item"> 
 								<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-2-infraestructura.jpg" alt="">
-								<p><strong>Flota propia </strong>de camionetas y utilitarios <strong>para retiro y entrega a domicilio</strong> en las principales ciudades del país.</p> 
+								<div class="p-wrapper"><p><strong>Flota propia </strong>de camionetas y utilitarios <strong>para retiro y entrega a domicilio</strong> en las principales ciudades del país.<br>-</p> </div>
 							</div> 
 							<div class="item"> 
 								<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-1-infraestructura.jpg" alt="">
-								<p><strong>5 cabeceras propias</strong> ubicadas estratégicamente en <strong>C.A.B.A., Córdoba, Rosario, Santa Fe y Tucumán.</strong></p>
+								<div class="p-wrapper"><p><strong>5 cabeceras propias</strong> ubicadas estratégicamente en <strong>C.A.B.A., Córdoba, Rosario, Santa Fe y Tucumán.</strong><br>-</p></div>
 							</div> 
 							<div class="item"> 
 								<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-0-infraestructura.jpg" alt="">
-								<p><strong>Más de 400 agencias en red</strong><br>a nivel nacional.</p>
+								<div class="p-wrapper"><p><strong>Más de 400 agencias en red</strong><br>a nivel nacional.<br>-</p></div>
 							</div> 
-						</div> 
+						</div>  
 				</div>
 				</div>
 			</section>

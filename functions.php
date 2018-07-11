@@ -5,6 +5,7 @@ function register_my_menus() {
 	register_nav_menus(
 	array(
 		'home-menu' => __( 'Menu principal' ),
+		'servicios-menu' => __( 'Menu servicios' )
 	)
 	);
 }

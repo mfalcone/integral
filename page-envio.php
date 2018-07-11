@@ -23,7 +23,7 @@
 					<fieldset>
 						<label for="puntodeventa">Código punto de venta
 :</label>
-						<input type="text" name="agecod" id="puntodeventa">
+						<input type="text" name="agecod" id="puntodeventa" placeholder="(Ej: 6001)">
 					</fieldset>
 					<fieldset>
 						<label for="letra">Letra:</label>
@@ -36,7 +36,7 @@
 					</fieldset>
 					<fieldset>
 						<label for="numeroguia">Número de Guía:</label>
-						<input type="text" name="guinro" id="numeroguia">
+						<input type="text" name="guinro" id="numeroguia" placeholder="(Ej: 00005678) ">
 					</fieldset>
 					<fieldset>
 						<label>Ingrese el número de la imagen:</label>
@@ -48,7 +48,7 @@
    
    <div>
      
-	 <input class="btn btn-warning btn-lg" type="submit" name="tracking_sumit" value="BUSCAR GUIA">				
+	 <input class="btn btn-warning btn-lg" type="submit" name="tracking_sumit" value="BUSCAR">				
 					</form>
 					<div id="resultados">
 					
@@ -59,6 +59,17 @@
 			</section>
 			<script type="text/javascript">
 			$ = jQuery;
+			var url_string = window.location.href
+	  		var url = new URL(url_string);
+			var puntodeventa = url.searchParams.get("puntodeventa");
+			var numeroguia = url.searchParams.get("numeroguia");
+			var letra = url.searchParams.get("letra");
+			if(puntodeventa && numeroguia){
+				$("#puntodeventa").val(puntodeventa)
+				$("#numeroguia").val(numeroguia)
+				$('#letra option[value="'+letra+'"]').attr("selected", "selected");
+			}
+
 			form = "#seguimiento-envio";
 			 $(form).submit(function (event) {
 			 	$("#resultados").html("cargando...")

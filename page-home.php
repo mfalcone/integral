@@ -54,15 +54,15 @@ endif;
 		  	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		    <!-- Modal content-->
 		    <div class="modal-content">
-				<input type="text" placeholder="Punto de venta">
+				<input type="text" id="codigopuntoventa" placeholder="Código punto de venta (Ej: 6001)">
 				<select name="letra" id="letra">
 					<option value="a">A</option>
 					<option value="b">B</option>
 					<option value="c">C</option>
 					<option value="p">P</option>
 				</select>
-				<input type="text" placeholder="Número de Guía">
-				<button type="button" class="btn-default">Seguir</button>		      
+				<input type="text" id="numeroguia" placeholder="Número de guía (Ej: 00005678) ">
+				<button type="button" class="btn-default" id="seguir-envio">Seguir</button>		      
 		    </div>
 		  </div>
 		</div>
@@ -89,22 +89,40 @@ endif;
 			</div>
 		</div>
 		<div id="nosotros-definicion">
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<div class="flip-container">
 				<div class="flipper col-md-4">
-					<div class="front"><div><h2><strong>Envios</strong><br> en <strong>24hs.</strong></h2></div></div>
-					<div class="back"><div><h2>Somos <strong>la única empresa</strong> que llega a las <strong>principales ciudades del país en 24hs.</strong></h2></div></div>
+					<div class="front">
+						<div><h2><strong>Envíos</strong><br> en <strong>24hs.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Somos <strong>la única empresa</strong> que llega a las <strong>principales ciudades del país en 24hs.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<div class="flip-container">
 				<div class="flipper col-md-4">
-					<div class="front"><div><h2><strong>Máxima capilaridad</strong> y <strong>cobertura</strong> del <strong> mercado</strong></h2></div></div>
-					<div class="back"><div><h2>Somos la empresa de logística de <strong>mayor capilaridad</strong> y <strong>cobertura</strong> a nivel nacional.</h2></div></div>
+					<div class="front">
+						<div><h2><strong>Máxima capilaridad</strong> y <strong>cobertura</strong> del <strong> mercado</strong>.</h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Somos la empresa de logística de <strong>mayor capilaridad</strong> y <strong>cobertura</strong> a nivel nacional.</h2></div>
+						<div class="bt"></div>
+					</div>
 				</div>
 			</div>
-			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<div class="flip-container">
 				<div class="flipper col-md-4">
-					<div class="front"><div><h2><strong>Más</strong> de <strong>400 agencias</strong></h2></div></div>
-					<div class="back"><div><h2>Tenemos <strong>más de 400 agencias</strong> distribuidas en <strong>cada rincón de la Argentina.</strong></h2></div></div>
+					<div class="front">
+						<div><h2><strong>Más</strong> de <strong>400 agencias</strong>.</h2></div>
+						<div class="bt"></div>
+					</div>
+					<div class="back">
+						<div><h2>Tenemos <strong>más de 400 agencias</strong> distribuidas en <strong>cada rincón de la Argentina.</strong></h2></div>
+						<div class="bt"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -122,19 +140,19 @@ endif;
 					<div class="carousel-inner col-md-12" role="listbox"> 
 						<div class="item active">
 							<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-3-infraestructura.jpg" alt="">
-							<p><strong>Más de 1.000 micros </strong><br>de larga distancia.</p> 
+							<div class="p-wrapper"><p><strong>Más de 1.000 micros </strong><br>de larga distancia.<br>-</p> </div>
 						</div> 
 						<div class="item"> 
 							<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-2-infraestructura.jpg" alt="">
-							<p><strong>Flota propia </strong>de camionetas y utilitarios <strong>para retiro y entrega a domicilio</strong> en las principales ciudades del país.</p> 
+							<div class="p-wrapper"><p><strong>Flota propia </strong>de camionetas y utilitarios <strong>para retiro y entrega a domicilio</strong> en las principales ciudades del país.<br>-</p> </div>
 						</div> 
 						<div class="item"> 
 							<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-1-infraestructura.jpg" alt="">
-							<p><strong>5 cabeceras propias</strong> ubicadas estratégicamente en <strong>C.A.B.A., Córdoba, Rosario, Santa Fe y Tucumán.</strong></p>
+							<div class="p-wrapper"><p><strong>5 cabeceras propias</strong> ubicadas estratégicamente en <strong>C.A.B.A., Córdoba, Rosario, Santa Fe y Tucumán.</strong><br>-</p></div>
 						</div> 
 						<div class="item"> 
 							<img src="<?php echo get_stylesheet_directory_uri();?>/images/slice-0-infraestructura.jpg" alt="">
-							<p><strong>Más de 400 agencias en red</strong><br>a nivel nacional.</p>
+							<div class="p-wrapper"><p><strong>Más de 400 agencias en red</strong><br>a nivel nacional.<br>-</p></div>
 						</div> 
 					</div> 
 				</div>
@@ -153,6 +171,13 @@ endif;
  	var laprov;
 	var laciudad;
 	var url = "<?php echo site_url(); ?>/buscador-de-agencias/"
+	var urlbuscadaenvio = "<?php echo site_url(); ?>/seguimiento-de-envios/"
+
+	/* variables para la busqueda envio*/
+
+	var codigodepuntoventa;
+	var letra;
+	var numeroguia;
 
 	jQuery(window).load(function(){
 
@@ -236,6 +261,18 @@ endif;
 
 			})
 		}
+
+		$("#seguir-envio").click(function(){
+			codigodepuntoventa = $("#codigopuntoventa").val();
+			numeroguia = $("#numeroguia").val();
+			letra = $("#letra").val();
+			aenviar = urlbuscadaenvio+"?puntodeventa="+codigodepuntoventa+"&numeroguia="+numeroguia+"&letra="+letra;
+			if(codigodepuntoventa && numeroguia && letra){
+				window.location.href = aenviar;
+			}else{
+				alert("por favor ingrese los datos para continuar");
+			}
+		})
 
 	 })
 

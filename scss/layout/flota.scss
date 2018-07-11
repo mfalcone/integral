@@ -6,6 +6,10 @@
 		left: 30px;
 		top: auto;
 		bottom:40px;
+
+		.active{
+			margin-bottom:40px;
+		}
 	}
 }
 
@@ -25,45 +29,124 @@
 				float:left;
 				img{
 					float:left;
+
+
 				}
 
 				.texto{
 					float:left;
 					width:60%;
 					border-left:2px dotted $allo;
-					padding-left: 10px;
 					padding-bottom: 20px;
 					margin-top:20px;
+					padding-left: 35px;
+					padding-right: 50px;
 				}
 			}
 		}
 	
 }
 
-.page-template-page-flota li{
+.page-template-page-flota #main li{
 	margin-bottom: 40px;
 	padding-left:0;
 
 	img{
 		margin-right: 4%;
    		margin-left: 2%;
+   		&.alignnone{
+						margin:0;
+					}
 	}
 }
 
 @media only screen and (max-width: 768px) {
-.second_title{
-	display: none;
+		.second_title{
+			top:0;
+		}
+
+		.page-template-page-flota .single-page-content ul li .texto, .page-template-page-flecha-bus .single-page-content ul li .texto{
+			width: 100%;
+		}
+
+		.page-template-page-flota .navbar  li{
+			margin-bottom:0;
+		}
+
+		.page-template-page-flota .carousel{
+		}
+
+
+		#carousel-flota .item{
+			
+
+		}
+
+	.page-nuestra-flota .contenido-page{
+		padding-top:50px;
+	}
+
+	#carousel-flota .carousel-indicators{
+		bottom:0px;
+		li{
+			margin-bottom: 0;
+			width: 12px;
+			height: 12px;
+
+			&.active{
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
-.page-template-page-flota .single-page-content ul li .texto, .page-template-page-flecha-bus .single-page-content ul li .texto{
+.page-template-page-flota .contenido-page ul li{
+
+	display: table;
 	width: 100%;
+
+		img{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		div.texto{
+			display:table-cell;
+			float:none;
+			width: 67%;
+			vertical-align: middle;
+		}
+
 }
 
-.page-template-page-flota .navbar  li{
-	margin-bottom:0;
-}
+@media only screen and (max-width: 768px) {
+	.page-template-page-flota #main .contenido-page ul{
+		margin-top:10px;
+	}
+		.page-template-page-flota #main .contenido-page ul li{
+			div.texto{
+				width: 100%;
+				display: block;
+				padding-top:10px;
+				border-left:none;
+				border-bottom: 2px dotted $allo;
+				float: left;
+			}
 
-.page-template-page-flota .carousel{
-	display: none;
-}
+			img{
+				width: 86%;
+				margin-left:auto;
+				margin-right: auto;
+				display: block;
+				float: none;
+
+				&.wp-image-165{
+						float:left;
+					}
+			}
+		}
+
+		.page-template-page-flota #main .contenido-page ul li:nth-child(3) .texto{
+					border-bottom:none;
+				}
 }

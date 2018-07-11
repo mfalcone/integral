@@ -32,7 +32,7 @@
 
 .logo-footer{
 	background:#FFF;
-	padding:40px 20px;
+	padding:52px 20px;
 	position: relative;
 	img{
 		margin-left:auto;
@@ -80,19 +80,16 @@ footer.main-footer{
 			position: absolute;
 			right: 20px;
 			top: 0;
+
 			li{
 				float:left;
-				background: #464645;
+				margin-top:5px;
 				margin-right: 5px;
-				padding: 5px 10px;
-				border-radius: 20px;
 
-				i{
-					color: #FFF;
-				}
-
-				.fa-instagram{
-					font-size:17px;
+				img{
+					width: 25px;
+					height: 25px;
+					margin-top:3px;
 				}
 			}
 		}
@@ -107,7 +104,7 @@ footer.main-footer{
 	.copyright{
 		background:$allo;
 		text-align:center;
-		padding:15px;
+		padding:4px;
 	}
 }
 
