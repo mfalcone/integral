@@ -43,7 +43,12 @@ jQuery(document).ready(function($){
 		interval:8000
 	})
 
-	
+	$('#carousel-infraestructura').bind('slid.bs.carousel', function (e) {
+	    res = $("#carousel-infraestructura .carousel-inner").height()-$("#carousel-infraestructura .active img").height()
+		console.log(res);
+		$("#carousel-infraestructura .active .p-wrapper").height(res)
+	});
+
 
 	$("#carousel-flota").carousel({
 		interval:3000
@@ -60,8 +65,9 @@ jQuery(document).ready(function($){
 	})
 
 	var velocidad = 100;
+	var animacionvuelve = 2000;
 	
-	$(".flip-container .front .bt").on("hover touchstart",
+	$(".flip-container .front .bt").on("hover",
 	    function(e) {
 	        $(this).parent().animate({
 	        	top:'-254px'
@@ -72,7 +78,7 @@ jQuery(document).ready(function($){
 	    }
 	);
 
-	$(".flip-container .back .bt").on("mouseout touchend",
+	$(".flip-container .back .bt").on("mouseout",
 	    function() {
 	    	$(this).parent().animate({
 	        	top:'254px'
@@ -82,6 +88,28 @@ jQuery(document).ready(function($){
 	        },velocidad)
 	    }
 	);
+	function lavuelta(el){
+		$(el).parent().delay(animacionvuelve).animate({
+	        	top:'0'
+	        },velocidad)
 
+	        $(".flip-container .back").delay(animacionvuelve).animate({
+	        	top:'254px'
+	        },velocidad)
+	}
 
+	$(".flip-container .front .bt").on("touchstart",
+	    function(e) {
+	    	$(this).parent().animate({
+	        	top:'-254px'
+	        },velocidad)
+	        $(".flip-container .back").animate({
+	        	top:'0'
+	        },velocidad)
+	        var el = this;
+	        setTimeout(lavuelta(el),animacionvuelve);
+	    }
+	);
+
+	
 })

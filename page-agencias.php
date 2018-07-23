@@ -112,13 +112,13 @@
         		
 	            if(ind == "single"){
 
-	            	$("#mostrar-resultados table").show();
+	            	$("#mostrar-resultados .msj").show();
 					$("#cod-agen").text(agencia.query.codigo);
 					$("#direccion-agen").text(agencia.query.direccion);
 					$("#telefono-agen").text(agencia.query.Telefono);
 	            }else if(ind != null){
 	             ind = this.customInfo;
-	            $("#mostrar-resultados table").show();
+	            $("#mostrar-resultados .msj").show();
 				$("#cod-agen").text(agencia.query[ind].agencia.codigo);
 				$("#direccion-agen").text(agencia.query[ind].agencia.direccion);
 				$("#telefono-agen").text(agencia.query[ind].agencia.Telefono);
@@ -212,7 +212,7 @@
 
 		    		$("#mostrar-resultados").show();
 		    		$("#mostrar-resultados .cargando-text").show();
-		    		$("#mostrar-resultados table").hide();
+		    		$("#mostrar-resultados .msj").hide();
 		    		$.ajax({
 					  url: '<?php echo get_stylesheet_directory_uri();?>/json-res.php?agencia&agen_num='+valor,
 					})
@@ -240,7 +240,7 @@
 
 
 					   }else{
-							$("#mostrar-resultados table").show();
+							$("#mostrar-resultados .msj").show();
 							$("#cod-agen").text(agencia.query.codigo);
 							$("#direccion-agen").text(agencia.query.direccion);
 							$("#telefono-agen").text(agencia.query.Telefono);
@@ -248,26 +248,58 @@
 							lon = agencia.query.longitud;
 							locacion = new google.maps.LatLng(lat,lon);
 							addMarker(locacion,"single");
-
-							var semana = [
-						   			["Lunes",agencia.query.Lunes],
-						   			["Martes",agencia.query.Martes],
-						   			["Miércoles",agencia.query.Miercoles],
-						   			["Jueves",agencia.query.Jueves],
-						   			["Viernes",agencia.query.Viernes],
-						   			["Sábado",agencia.query.Sábado],
-						   			["Domingo",agencia.query.Domingo]
-						   			];
-						   		var dias_habiles = [];
-						   		$.each(semana,function(ind,val){
-						   				if(semana[ind][1]==1){
-						   					dias_habiles.push(semana[ind][0]);
-						   					if(dias_habiles.length>0){
-						   						$("#horario-agen").html('De '+dias_habiles[0]+' a '+dias_habiles[dias_habiles.length-1]);
-						   					}
-						   					$("#horario-agen").append('<br> de '+agencia.query.Apertura+" a "+agencia.query.Cierre)
-						   					
-						   				}
+							 $("#horario-agen").html("");
+							 var dias = [];
+							 $.each(agencia.query.horario,function(ind,val){
+								var semana = [
+							   			["Lunes",val.Lunes],
+							   			["Martes",val.Martes],
+							   			["Miércoles",val.Miercoles],
+							   			["Jueves",val.Jueves],
+							   			["Viernes",val.Viernes],
+							   			["Sábado",val.Sábado],
+							   			["Domingo",val.Domingo]
+							   			];
+							   		var dias_habiles = [];
+							   		var txtdiashabiler = "";
+							   		var dia; 
+							   		$.each(semana,function(indice,valor){
+							   				if(semana[indice][1]==1){
+							   					dias_habiles.push(semana[indice][0]);
+							   					if(dias_habiles.length>0){
+							   						if(ind == 0){
+							   							txtdiashabiler = 'De '
+							   						}else{
+							   							if(dias_habiles.length > 1){
+							   								txtdiashabiler = ' y de ';
+							   							}else {
+							   								txtdiashabiler = ' y ';
+							   							}
+							   						}
+							   						if(dias_habiles.length > 1){
+							   							dia = dias_habiles[0]+' a '+dias_habiles[dias_habiles.length-1];
+							   						}else{
+							   							dia = dias_habiles[0];
+							   						}
+							   						//txtdiashabiler += dias;
+							   						//$("#horario-agen").append('De '+dias_habiles[0]+' a '+dias_habiles[dias_habiles.length-1]);
+							   					}
+							   					
+							   					
+							   				}
+							   		})
+							if(ind > 0){
+								if(dia != dias[0]){
+									dias.push(dia + " de");
+								}
+							}else{
+									dias.push(dia);
+								}   		
+							console.log(dias);
+							console.log(txtdiashabiler);
+							$("#horario-agen").append(txtdiashabiler);		
+							$("#horario-agen").append(dias[ind]);		
+							$("#horario-agen").append(' '+val.Apertura+" a "+val.Cierre)
 						   		})
          				}
 					  });
@@ -359,7 +391,7 @@
 															bounds.extend(me);
 															$("#mostrar-resultados").show();
 															$("#mostrar-resultados .cargando-text").hide();
-									    					$("#mostrar-resultados table").hide();
+									    					$("#mostrar-resultados .msj").hide();
 															addMarker(locacion,"single");
 															addMyMarker(me,null);
 															console.log(me)

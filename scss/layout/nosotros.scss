@@ -274,14 +274,18 @@
 		position:inherit;
 		height: 40%;
 	    margin-left: 7%;
-	    padding-top: 20px;
+	}
+
+	#carousel-infraestructura .item img{
+		position: relative;
+    	z-index: 100;
 	}
 
 	#carousel-infraestructura .item .p-wrapper p{
-		line-height: 20px;
+		line-height: 16px;
 		margin-top: 0;
 		margin-left:0;
-		font-size:15px;
+		font-size:13px;
 		padding-right:33px;
 	}
 }
